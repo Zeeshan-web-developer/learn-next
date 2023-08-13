@@ -8,6 +8,9 @@ export default async function Home() {
   return (
     <>
       <Item items={products} />
+      <div className="grid place-center">
+        <h2 className="bg-red-500 text-2xl">Hello </h2>
+      </div>
     </>
   );
 }
