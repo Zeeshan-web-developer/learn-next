@@ -27,9 +27,9 @@ export default async function page({ params }: any) {
   );
 }
 
-export async function generateStaticParams() {
-  const products12 = await getProducts();
-  return products12?.map((item: any) => ({
-    itemid: item._id?.toString(),
-  }));
-}
+// export async function generateStaticParams() {
+//   const products12 = await getProducts();
+//   return products12?.map((item: any) => ({
+//     itemid: item._id?.toString(),
+//   }));
+// }
