@@ -14,7 +14,6 @@ export async function POST(request: Request) {
       data: res,
     });
   } catch (error: any) {
-    console.log(error);
     if (error?.code === 11000) {
       return NextResponse.json({
         status: 400,

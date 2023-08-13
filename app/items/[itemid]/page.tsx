@@ -1,16 +1,5 @@
 import React from "react";
-//  const getProducts = async () => {
-//   try {
-//     const res = await fetch("http://localhost:3000/api/items/", {
-//       cache: "no-cache",
-//     });
-//     const products = await res.json();
-//     return products?.data;
-//   } catch (error) {
-//     console.log({ productserror: error });
-//   }
-// };
-
+import { getProducts } from "@/app/utils";
 const getIemIfno = async (id: any) => {
   try {
     const res = await fetch(`http://localhost:3000/api/singleItem`, {
@@ -18,7 +7,6 @@ const getIemIfno = async (id: any) => {
       body: JSON.stringify(id),
     });
     const item = await res.json();
-    console.log("item", item);
     return item;
   } catch (error) {
     console.log("error-getinfo", error);
@@ -39,9 +27,9 @@ export default async function page({ params }: any) {
   );
 }
 
-// export async function generateStaticParams() {
-//   const products12 = await getProducts();
-//   return products12?.map((item: any) => ({
-//     itemid: item._id?.toString(),
-//   }));
-// }
+export async function generateStaticParams() {
+  const products12 = await getProducts();
+  return products12?.map((item: any) => ({
+    itemid: item._id?.toString(),
+  }));
+}

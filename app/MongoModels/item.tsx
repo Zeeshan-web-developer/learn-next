@@ -24,7 +24,6 @@ const itemSchema = new mongoose.Schema({
     ref: "Category",
     required: true,
   },
-  // other item properties
 });
 
 const Item = mongoose.models.Item || mongoose.model("Item", itemSchema);

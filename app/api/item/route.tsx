@@ -4,7 +4,6 @@ import ItemModal from "../../MongoModels/item";
 
 //store category
 export async function POST(request: Request) {
-  console.log("request", request);
   try {
     await dbConnect();
     const json = await request.json();

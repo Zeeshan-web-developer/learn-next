@@ -3,7 +3,6 @@ import dbConnect from "../../config/db";
 import ItemModal from "../../MongoModels/item";
 
 export async function POST(request: Request, response: Response) {
-  console.log({ request: request.body });
   try {
     await dbConnect();
     const json = await request.json();
