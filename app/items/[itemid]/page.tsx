@@ -1,8 +1,8 @@
 import React from "react";
-import { getProducts } from "@/app/utils";
+import { getProducts, getEnvVariable } from "@/app/utils";
 const getIemIfno = async (id: any) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/singleItem`, {
+    const res = await fetch(`${getEnvVariable("BASE_URL")}/api/singleItem`, {
       method: "POST",
       body: JSON.stringify(id),
     });
